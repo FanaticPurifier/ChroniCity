@@ -44,7 +44,9 @@ func resolve_battle(player_team: Array[Agent], enemy_team: Array[Agent]) -> Arra
 	# 3. Determine the winner and add it to the log.
 	if player_current_health > 0:
 		combat_log.append("PLAYER TEAM WINS!")
+		GameManager.battle_completed.emit("VICTORY")
 	else:
 		combat_log.append("ENEMY TEAM WINS!")
+		GameManager.battle_completed.emit("DEFEAT")
 		
 	return combat_log

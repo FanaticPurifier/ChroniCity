@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://n50rr62ydlno"]
 
-[ext_resource type="Script" uid="uid://od5ly3sfkwd5" path="res://test_scene.gd" id="1_uhqqe"]
+[ext_resource type="Script" uid="uid://od5ly3sfkwd5" path="res://battle_scene.gd" id="1_fw8re"]
 
 [node name="Node" type="Node"]
-script = ExtResource("1_uhqqe")
+script = ExtResource("1_fw8re")
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = -1
@@ -31,4 +31,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 autowrap_mode = 2
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

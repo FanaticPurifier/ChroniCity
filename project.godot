@@ -11,11 +11,12 @@ config_version=5
 [application]
 
 config/name="CthoniCity"
-run/main_scene="uid://n50rr62ydlno"
+run/main_scene="uid://xafu2j0ocyyx"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-RosterManager="*res://RosterManager.gd"
-BattleResolver="*res://BattleResolver.gd"
+RosterManager="*res://roster_manager.gd"
+BattleResolver="*res://battle_resolver.gd"
+GameManager="*res://game_manager.gd"

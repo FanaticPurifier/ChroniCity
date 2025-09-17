@@ -7,6 +7,15 @@ const AgentResource = preload("res://agents/agent.gd")
 const FIRST_NAMES = ["John", "Mary", "David", "Sarah", "Peter", "Jane"]
 const LAST_NAMES = ["Smith", "Jones", "Williams", "Brown", "Miller", "Davis"]
 
+var roster: Array[Agent] = []
+
+func _ready():
+	if roster.is_empty():
+		for i in 3:
+			roster.append(generate_agent())
+		print("Starting roster generated with %d agents." % roster.size())
+
+
 func generate_agent() -> Agent:
 	var new_agent = AgentResource.new()
 
