@@ -9,4 +9,4 @@ func _on_view_roster_btn_pressed() -> void:
 	roster_label.text = roster_text
 
 func _on_select_mission_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://battle_scene.tscn")
+	get_tree().change_scene_to_file("res://mission_select_scene.tscn")

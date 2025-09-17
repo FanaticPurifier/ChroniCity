@@ -8,10 +8,8 @@ func _ready():
 	run_battle()
 
 func run_battle():
-	# 1. Create the teams using RosterManager
-	var player_team: Array[Agent] = []
-	for i in 3:
-		player_team.append(RosterManager.generate_agent())
+	# 1. Get player's team from GameManager
+	var player_team: Array[Agent] = GameManager.player_team_for_battle
 
 	var enemy_team: Array[Agent] = []
 	for i in 3:

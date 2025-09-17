@@ -4,6 +4,9 @@ extends Node
 signal battle_completed(result: String)
 var last_battle_result: String = "NO RESULT"
 
+var selected_mission_data: Dictionary = {}
+var player_team_for_battle: Array[Agent] = []
+
 func _ready():
 	# We connect our own signal to our own function.
 	# When "battle_completed" is emitted from ANYWHERE, this manager
