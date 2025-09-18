@@ -4,7 +4,7 @@ extends Node
 signal battle_completed(result: String)
 var last_battle_result: String = "NO RESULT"
 
-var selected_mission_data: Dictionary = {}
+var selected_mission_data: MissionData = null
 var player_team_for_battle: Array[Agent] = []
 
 func _ready():
