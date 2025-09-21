@@ -17,6 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-RosterManager="*res://roster_manager.gd"
-BattleResolver="*res://battle_resolver.gd"
-GameManager="*res://game_manager.gd"
+RosterManager="*res://src/game/roster_manager.gd"
+BattleResolver="*res://src/game/battle_resolver.gd"
+GameManager="*res://src/autoload/game_manager.gd"
+Globals="*res://src/autoload/globals.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/script-ide/plugin.cfg")

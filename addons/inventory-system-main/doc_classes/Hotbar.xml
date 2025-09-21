@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Hotbar" inherits="NodeInventories" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Node representing the player's hotbar related to an [Inventory].
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="active_slot">
+			<return type="void" />
+			<param index="0" name="slot_index" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="deactive_slot">
+			<return type="void" />
+			<param index="0" name="slot_index" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="equip">
+			<return type="void" />
+			<param index="0" name="stack" type="ItemStack" />
+			<param index="1" name="slot_index" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="get_inventory" qualifiers="const">
+			<return type="Inventory" />
+			<description>
+				Returns the [Inventory] that is related to this hotbar.
+			</description>
+		</method>
+		<method name="get_stack_on_selection" qualifiers="const">
+			<return type="ItemStack" />
+			<description>
+			</description>
+		</method>
+		<method name="get_stack_on_slot" qualifiers="const">
+			<return type="ItemStack" />
+			<param index="0" name="slot_index" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="has_valid_stack_on_selection" qualifiers="const">
+			<return type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="has_valid_stack_on_slot" qualifiers="const">
+			<return type="bool" />
+			<param index="0" name="slot_index" type="int" />
+			<description>
+			</description>
+		</method>
+		<method name="is_active_slot" qualifiers="const">
+			<return type="bool" />
+			<param index="0" name="slot_index" type="int" />
+			<description>
+				Returns true if a valid [ItemStack] is in the current selection.
+			</description>
+		</method>
+		<method name="next_item">
+			<return type="void" />
+			<description>
+				Switches from the current [member selection_index] to the next selection.
+			</description>
+		</method>
+		<method name="previous_item">
+			<return type="void" />
+			<description>
+				Switches from the current [member selection_index] to the previous selection.
+			</description>
+		</method>
+		<method name="unequip">
+			<return type="void" />
+			<param index="0" name="slot_index" type="int" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="inventory" type="NodePath" setter="set_inventory_path" getter="get_inventory_path" default="NodePath(&quot;&quot;)">
+			[Inventory] related to hotbar.
+		</member>
+		<member name="max_slots" type="int" setter="set_max_slots" getter="get_max_slots" default="4">
+		</member>
+		<member name="selection_index" type="int" setter="set_selection_index" getter="get_selection_index" default="-1">
+			Current selection within the hotbar.
+		</member>
+	</members>
+	<signals>
+		<signal name="equipped">
+			<param index="0" name="slot_index" type="int" />
+			<description>
+			</description>
+		</signal>
+		<signal name="equipped_stack_changed">
+			<param index="0" name="slot_index" type="int" />
+			<description>
+			</description>
+		</signal>
+		<signal name="on_change_selection">
+			<param index="0" name="selection_index" type="int" />
+			<description>
+				Emitted when [member selection_index] changes.
+			</description>
+		</signal>
+		<signal name="unequipped">
+			<param index="0" name="slot_index" type="int" />
+			<description>
+			</description>
+		</signal>
+	</signals>
+</class>

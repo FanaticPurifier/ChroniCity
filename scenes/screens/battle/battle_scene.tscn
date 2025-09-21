@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://n50rr62ydlno"]
+
+[ext_resource type="Script" uid="uid://od5ly3sfkwd5" path="res://src/game/battle_scene.gd" id="1_fw8re"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_fw8re")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.003
+anchor_right = 1.0020001
+anchor_bottom = 1.0
+offset_left = -0.15200007
+offset_top = 0.055999994
+offset_right = -0.30407715
+offset_bottom = -4.0
+
+[node name="CombatLogLabel" type="RichTextLabel" parent="ScrollContainer"]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
+autowrap_trim_flags = 0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

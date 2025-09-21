@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MissionData" load_steps=2 format=3 uid="uid://himgugos3ups"]
+
+[ext_resource type="Script" uid="uid://b1tfv2pbdrcdy" path="res://src/core/missions/mission_data.gd" id="1_ja65q"]
+
+[resource]
+script = ExtResource("1_ja65q")
+mission_name = "Subway Psychosis"
+enemy_type = "Eldritch"
+metadata/_custom_type_script = "uid://b1tfv2pbdrcdy"
