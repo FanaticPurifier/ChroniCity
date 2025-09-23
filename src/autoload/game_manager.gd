@@ -17,3 +17,12 @@ func _ready():
 func _on_battle_completed(result: String):
 	last_battle_result = result
 	print("GameManager received battle_completed signal with result: ", result)
+
+func change_scene(scene_key: String) -> void:
+	if not Globals.SCENES.has(scene_key):
+		push_error("Scene key '%s' not found in SCENES dictionary" % scene_key)
+		return
+
+	var error = get_tree().change_scene_to_file(Globals.SCENES[scene_key])
+	if error != OK:
+		push_error("Failed to change to scene: %s" % scene_key)
